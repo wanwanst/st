@@ -7,10 +7,10 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 (async () => {
-  console.log(`Trophy And Crown Hack Safe! [ReEdit]
-By : ${chalk.bold('xDast#8745')} - Credit : @dkmpostor & @Eskey & diubah dikit sama @nnvidia control panel#7435
+  console.log(`
+By : ${chalk.bold('@nvidia control panel#7435')}
 `);
-const round = rs.question("0. Eleminated \n1. Round 1\n2. Round 2\n3. Round(Winner) 3\n Input Your Round: ")
+const round = rs.question("0. Eleminated(0 Trophy) \n1. Round1(10 Trophy)\n2. Round2(20 Trophy)\n3. Round3(Winner)\n Input Your Round: ")
 
 const GoStumble = (auth) => new Promise((resolve, reject) => {
 
@@ -30,7 +30,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
 
 });
 
-  const auth = rs.question('Enter Authentication Code! : ');
+  const auth = rs.question('Enter Authentication! : ');
   const delay = rs.question('Enter Delay(MilliSecond)! : ');
   console.log('');
 
@@ -39,8 +39,7 @@ const GoStumble = (auth) => new Promise((resolve, reject) => {
     const result = await GoStumble(auth);
     if (!result) {
 
-      console.log(chalk.red(`\r[ ${moment().format('HH:mm:ss')} ] Authentication Code Not Valid`));
-
+      console.log(chalk.yellowBright(`\r[${moment().format('HH:mm:ss')}] ${chalk.red(`ERROR : [Maybe Auth Key Expired]`)}`))
     } else if (result.includes('User')) {
 
       const data = JSON.parse(result);
@@ -55,10 +54,8 @@ console.log(chalk.yellowBright(`\r[${moment().format('HH:mm:ss')}] ${chalk.cyan(
       await sleep(delay);
 
     } else if (result == 'BANNED') {
-      console.log(chalk.bgRed(`Your Account has been Banned`));
+      console.log(chalk.red(`AWOKAWOK KENA BANNED`));
      break;
-    }
   }
-
-
+}
 })();
